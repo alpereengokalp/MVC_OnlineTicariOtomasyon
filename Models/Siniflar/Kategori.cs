@@ -45,8 +45,5 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         //One to Many İlişki
         //Her ürün bir kategoride yer alır, bir kategori ise birden fazla ürün içerebilir.
         //Beyaz eşya kategorisi  çamaşır makinesi, bulaşık makinesi, buzdolabı, ocak
-
     }
-
-
 }

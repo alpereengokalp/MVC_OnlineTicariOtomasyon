@@ -21,7 +21,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [StringLength(30)]
         public string Marka { get; set; }
         public short Stok { get; set; } //2 byte --> -32768 ile 32767
-        public decimal AlişFiyati { get; set; }
+        public decimal AlisFiyati { get; set; }
         public decimal SatisFiyati { get; set; }
         public bool Durum { get; set; } //Ürünler için kritik seviye (stok sayısı 20 altı) durumu
 
