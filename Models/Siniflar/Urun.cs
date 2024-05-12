@@ -36,7 +36,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         //Kategori sınıfına bağlı olan Kategori isminde property oluşturmuş olduk.
         //public SınıfAdı PropertyAdı
 
-        public SatisHareket SatisHareket { get; set; } //Bir ürünün bir satış hareketi vardır
+        public ICollection<SatisHareket> SatisHarekets { get; set; } //Her ürünün birden çok satışı olabilir.
     }
     
 }

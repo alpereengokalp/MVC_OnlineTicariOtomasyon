@@ -30,6 +30,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
-        public SatisHareket SatisHareket { get; set; } //Bir carinin bir satış hareketi vardır
+        public ICollection<SatisHareket> SatisHarekets { get; set; } //Bir carinin birden fazla ürün alabilir.
     }
 }

@@ -27,7 +27,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
-        public SatisHareket SatisHareket { get; set; } //Bir personelin bir satış hareketi vardır
+        public ICollection<SatisHareket> SatisHarekets { get; set; } //Bir personelin birden fazla ürün satabilir
 
         public Departman Departman { get; set; }//Bir personel bir departmanda çalışır.
     }

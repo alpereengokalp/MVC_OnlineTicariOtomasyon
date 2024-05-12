@@ -22,9 +22,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
-        public ICollection<Urun> Uruns { get; set; } //Bir satış hareketinde birden fazla ürün olabilir
-        public ICollection<Cariler> Carilers { get; set; } //Bir satış hareketinde birden fazla cari olabilir
-        public ICollection<Personel> Personels { get; set; } //Bir satış hareketinde birden fazla personel olabilir
+        public Urun Urun { get; set; } //Bir satış hareketinde bir ürüne aittir
+        public Cariler Cariler { get; set; } //Bir satış hareketi bir cariye aittir
+        public Personel Personel { get; set; } //Bir satış hareketi bir personele aittir
     }
            
 }
