@@ -35,7 +35,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
-        public ICollection<Urun> Uruns { get; set; } //Her kategoride birden fazla ürün yer alabilir.
+        public virtual ICollection<Urun> Uruns { get; set; } //Her kategoride birden fazla ürün yer alabilir.
                                                      //ICollection<Sınıf Adı> SınıfAdıs --> Veritabanında sınıf adına s takısı alarak oluşmuş olur
 
         //ICollection<Türü> birden fazla ürünü bir arada tutabilecek olan "koleksiyon" a ihtiyacımız var.

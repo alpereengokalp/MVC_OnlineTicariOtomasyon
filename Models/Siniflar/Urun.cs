@@ -31,8 +31,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
 
-        /* İlişkilerin Kurulması */    
-        public Kategori Kategori { get; set; }  //Bir ürünün sadece bir kategorisi olabilir.
+        /* İlişkilerin Kurulması */
+        public int KategoriId { get; set; }
+        public virtual Kategori Kategori { get; set; }  //Bir ürünün sadece bir kategorisi olabilir.
         //Kategori sınıfına bağlı olan Kategori isminde property oluşturmuş olduk.
         //public SınıfAdı PropertyAdı
 
