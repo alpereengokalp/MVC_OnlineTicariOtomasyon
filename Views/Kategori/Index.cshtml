@@ -1,0 +1,36 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar @*En üste kullanacağımız modele ulaşmak için view tarafına da ekledik. *@
+@model List<Kategori> 
+      @*Bir model oluşturduk ve bu model için bir liste tanımladık, içine de sınıfların 
+          içerisinde bu sayfada çağıracağımız değeri yazıyoruz *@
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    
+    @foreach (var k in Model)
+    {    @*4 parametre -> Değişkenin türü, o değişkene bir isim, in (ing içinde), nereden alacağımız *@
+         @*foreach döngüsü MVC'de veri listelemede en sık kullanılan yapıdır*@
+   
+<tr>
+    <td>
+        @k.KategoriID
+    </td>
+    <td>
+        @k.KategoriAdi
+    </td>
+    <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a></td>
+</tr>
+    }
+</table>
+
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>
