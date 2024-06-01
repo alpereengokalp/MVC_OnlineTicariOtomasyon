@@ -18,6 +18,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
+        public bool Durum {  get; set; }   
         public ICollection<Personel> Personels { get; set; } //Bir departmanda birden fazla personel bulunabilir.
     }
 }

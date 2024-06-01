@@ -1,0 +1,23 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Departman
+
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Departman Güncelleme</h2>
+<br />
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{ //Bu sayfa yüklendikten sonra Post işlemi gerçekleştirince hangi ActionResult çalışacak
+  //KategoriGuncelle adında bir ActionResult tanımlarız, KategoriGuncelle nerenin içerisinde, ne zaman çalıaşcak
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.DepartmanAdi)
+        @Html.TextBoxFor(x => x.DepartmanAdi, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.DepartmanID)
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}
+

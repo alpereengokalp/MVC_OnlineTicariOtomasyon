@@ -22,9 +22,13 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
+        public int UrunId { get; set; }
+        public int CariId { get; set; }
+        public int PersonelId { get; set; }
+
         public virtual Urun Urun { get; set; } //Bir satış hareketinde bir ürüne aittir
-        public Cariler Cariler { get; set; } //Bir satış hareketi bir cariye aittir
-        public Personel Personel { get; set; } //Bir satış hareketi bir personele aittir
+        public virtual Cariler Cariler { get; set; } //Bir satış hareketi bir cariye aittir
+        public virtual Personel Personel { get; set; } //Bir satış hareketi bir personele aittir
     }
            
 }
