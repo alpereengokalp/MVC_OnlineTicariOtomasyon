@@ -1,0 +1,31 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+
+@{
+    ViewBag.Title = "MusteriEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Yeni Müşteri Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.Label("Müşteri Adı:")
+    @Html.TextBoxFor(x => x.CariAdi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariAdi, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Müşteri Soyadı:")
+    @Html.TextBoxFor(x => x.CariSoyadi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSoyadi, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Şehir:")
+    @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariSehir, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Mail:")
+    @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
+
+

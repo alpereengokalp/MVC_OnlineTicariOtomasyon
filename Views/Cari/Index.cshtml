@@ -1,0 +1,39 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Cariler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Index</h2>
+<table class="table table-striped">
+    <tr>
+        <th>CARİ ID</th>
+        <th>AD</th>
+        <th>SOYAD</th>
+        <th>ŞEHİR</th>
+        <th>MAİL</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAYLAR</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.CariID</td>
+            <td>@x.CariAdi</td>
+            <td>@x.CariSoyadi</td>
+            <td>@x.CariSehir</td>
+            <td>@x.CariMail</td>
+            <td><a href="/Cari/MusteriSil/@x.CariID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Cari/MusteriGetir/@x.CariID" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Cari/MusteriSatis/@x.CariID" class="btn btn-success" style="background-color:royalblue" >Satış Geçmişi</a></td>
+            
+        </tr>
+    }
+</table>
+
+<a href="/Cari/MusteriEkle/" class="btn btn-primary">Müşteri Ekle</a>
+        @* CariController/MusteriEkle methodu *@

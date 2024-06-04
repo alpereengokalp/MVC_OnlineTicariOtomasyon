@@ -1,0 +1,36 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Cariler
+
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<br />
+<h2>Müşteri Güncelleme</h2>
+<br />
+
+@using (Html.BeginForm("MusteriGuncelle", "Cari", FormMethod.Post))
+{ //Bu sayfa yüklendikten sonra Post işlemi gerçekleştirince hangi ActionResult çalışacak
+  //KategoriGuncelle adında bir ActionResult tanımlarız, KategoriGuncelle nerenin içerisinde, ne zaman çalıaşcak
+
+    <div class="form-group">
+        @Html.HiddenFor(x => x.CariID)
+        @Html.Label("Adı:")
+        @Html.TextBoxFor(x => x.CariAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariAdi, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Soyadı:")
+        @Html.TextBoxFor(x => x.CariSoyadi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariSoyadi, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Şehir:")
+        @Html.TextBoxFor(x => x.CariSehir, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariSehir, "", new { @style = "color:red" })
+        <br />
+        @Html.Label("Mail:")
+        @Html.TextBoxFor(x => x.CariMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CariMail, "", new { @style = "color:red" })
+        <br />
+    </div>
+    <button class="btn btn-warning">Güncelle</button>
+}
