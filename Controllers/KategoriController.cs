@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineTicariOtomasyon.Models.Siniflar;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
@@ -11,9 +13,9 @@ namespace MvcOnlineTicariOtomasyon.Controllers
     {
         // GET: Kategori
         Context c = new Context();
-        public ActionResult Index() //Sayfa - form yüklenince çalışır.
+        public ActionResult Index(int sayfa = 1) //Sayfa - form yüklenince çalışır. // int sayfa = 1 sayfalama işlemi için başlangıç değeri
         {
-            var kategoriler = c.Kategoris.ToList(); //Kategori tablosundaki değerler listelendi.
+            var kategoriler = c.Kategoris.ToList().ToPagedList(sayfa, 10); //Kategori tablosundaki değerler listelendi.
             return View(kategoriler); //Geriye bu listelenen değerler döndürüldü.
         }
 

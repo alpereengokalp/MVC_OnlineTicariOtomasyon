@@ -21,7 +21,9 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
 
 
         /* İlişkilerin Kurulması */
-        public Faturalar Faturalar { get; set; } //Bir fatura kaleminde sadece bir tane faturası olabilir.
+        public int FaturaId { get; set; }
+
+        public virtual Faturalar Faturalar { get; set; } //Bir fatura kaleminde sadece bir tane faturası olabilir.
     }
     
 }

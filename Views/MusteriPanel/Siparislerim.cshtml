@@ -1,0 +1,37 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<SatisHareket>
+
+@{
+    ViewBag.Title = "Siparislerim";
+    Layout = "~/Views/Shared/_MusteriLayout.cshtml";
+}
+
+<br />
+<h2>Sipariş Geçmişim</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ÜRÜN ADI</th>
+        <th>FİYAT</th>
+        <th>TARİH</th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.Urun.UrunAdi</td>
+                <td>@x.Fiyat</td>
+                <td>@Convert.ToDateTime(x.Tarih).ToString("dd/MM/yyyy")</td>
+            </tr>
+
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="3">Sipariş bulunmamaktadır.</td>
+        </tr>
+    }
+</table>

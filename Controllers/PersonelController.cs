@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -33,6 +34,14 @@ namespace MvcOnlineTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult PersonelEkle(Personel p)
         {
+            if (Request.Files.Count>0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName); //dosya adini alır
+                string uzanti = Path.GetExtension(Request.Files[0].FileName); //dosya uzantisini alir
+                string yol = "~/Images_Personel/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel = "/Images_Personel/" + dosyaAdi + uzanti;
+            }
             c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -53,13 +62,31 @@ namespace MvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult PersonelGuncelle(Personel p)
         {
+            
             var pGuncelle = c.Personels.Find(p.PersonelID);
             pGuncelle.PersonelAdi = p.PersonelAdi;
             pGuncelle.PersonelSoyadi = p.PersonelSoyadi;
-            pGuncelle.PersonelGorsel = p.PersonelGorsel;
+            //pGuncelle.PersonelGorsel = p.PersonelGorsel;
             pGuncelle.DepartmanId = p.DepartmanId;
+
+            if (Request.Files.Count > 0)
+            {
+                string dosyaAdi = Path.GetFileName(Request.Files[0].FileName); //dosya adini alır
+                string uzanti = Path.GetExtension(Request.Files[0].FileName); //dosya uzantisini alir
+                string yol = "~/Images_Personel/" + dosyaAdi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel = "/Images_Personel/" + dosyaAdi + uzanti;
+                pGuncelle.PersonelGorsel = p.PersonelGorsel;
+            }
+
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public ActionResult PersonelListe() 
+        { 
+            var sorgular = c.Personels.ToList();
+            return View(sorgular); 
         }
     }
 }

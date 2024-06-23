@@ -23,7 +23,15 @@
             <td>@p.PersonelID</td>
             <td>@p.PersonelAdi</td>
             <td>@p.PersonelSoyadi</td>
-            <td>@p.PersonelGorsel</td>
+            <td>
+                <a href="@p.PersonelGorsel" class="d-block photo-item" data-fancybox="gallery">
+                    <img src="@p.PersonelGorsel" style="width:100px" />
+                    <div class="photo-text-more">
+                        <span class="icon icon-search"></span>
+                    </div>
+                </a>
+            </td>
+            @*<td><img src="@p.PersonelGorsel" style="width:75px; height:75px;" /></td>*@
             <td>@p.Departman.DepartmanAdi</td>
             <td><a href="/Personel/PersonelGetir/@p.PersonelID" class="btn btn-success">Güncelle</a></td>
             <td><a href="/Departman/DepartmanPersonelSatis/@p.PersonelID" class="btn btn-success" style="background-color:royalblue">Detaylar</a></td>

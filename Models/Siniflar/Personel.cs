@@ -12,14 +12,17 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Key]
         public int PersonelID { get; set; }
 
+        [Display(Name = "Personel Adı")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string PersonelAdi { get; set; }
 
+        [Display(Name = "Personel Soyadı")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string PersonelSoyadi { get; set; }
 
+        [Display(Name = "Görsel")]
         [Column(TypeName = "Varchar")] //Dosyalı tutulacak 250 karakter olmalı uzun link olma ihtimali olabilir.
         [StringLength(250)]
         public string PersonelGorsel { get; set; } //Görseller neden string olarak tutulur? 
