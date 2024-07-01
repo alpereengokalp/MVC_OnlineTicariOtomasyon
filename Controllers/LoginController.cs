@@ -8,6 +8,7 @@ using MvcOnlineTicariOtomasyon.Models.Siniflar;
 
 namespace MvcOnlineTicariOtomasyon.Controllers
 {
+    [AllowAnonymous] //Authorize işlemi için aşağıdakileri muaf tut
     public class LoginController : Controller
     {
         // GET: Login
